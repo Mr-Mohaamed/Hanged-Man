@@ -1,0 +1,233 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Tahoma, Arial;
+}
+.container {
+	margin: 0px auto;
+	width: 1000px;
+	padding: 0px 20px;
+}
+.game-info {
+	display: flex;
+	padding: 20px 0;
+}
+.game-info .logo {
+	flex: 1;
+	color: rgb(87, 161, 26);
+}
+.game-info .category {
+	flex: 1;
+	text-align: right;
+}
+.game-info .category .game-type {
+	color: rgb(87, 161, 26);
+}
+.row {
+	display: flex;
+}
+.row .game-draw {
+	flex: 1;
+	height: 324px;
+}
+.row .game-draw .draw {
+	position: relative;
+	height: 100%;
+}
+.row .game-draw .draw .stand {
+	width: 4px;
+	height: 100%;
+	position: absolute;
+	background-color: black;
+	left: 20%;
+	display: none;
+}
+.row .game-draw .draw.mistake1 .stand {
+	display: block;
+}
+.row .game-draw .draw .hang {
+	height: 4px;
+	width: 170px;
+	position: absolute;
+	background-color: black;
+	left: 14%;
+	top: 11%;
+	display: none;
+}
+.row .game-draw .draw.mistake2 .hang {
+	display: block;
+}
+.row .game-draw .draw .rope {
+	width: 4px;
+	height: 40px;
+	position: absolute;
+	background-color: black;
+	left: 66%;
+	top: 12%;
+	display: none;
+}
+.row .game-draw .draw.mistake3 .rope {
+	display: block;
+}
+.row .game-draw .draw .rope::after {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	border-radius: 50%;
+	left: -27px;
+	top: 35px;
+	border: 4px dashed black;
+}
+
+.row .game-draw .draw .man .head {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 4px solid black;
+	left: 60%;
+	top: 27%;
+	position: absolute;
+	display: none;
+}
+.row .game-draw .draw.mistake4 .man .head {
+	display: block;
+}
+.row .game-draw .draw .man .body {
+	width: 4px;
+	height: 90px;
+	position: absolute;
+	background-color: black;
+	left: 66%;
+	top: 39%;
+	display: none;
+}
+.row .game-draw .draw.mistake5 .man .body {
+	display: block;
+}
+.row .game-draw .draw .man .hands::before {
+	transform: rotate(45deg);
+	left: 62%;
+}
+.row .game-draw .draw .man .hands::after {
+	transform: rotate(-45deg);
+	left: 70%;
+}
+.row .game-draw .draw .man .hands::after,
+.row .game-draw .draw .man .hands::before {
+	width: 4px;
+	height: 40px;
+	position: absolute;
+	background-color: black;
+	top: 45%;
+	content: "";
+	display: none;
+}
+.row .game-draw .draw.mistake6 .man .hands::after,
+.row .game-draw .draw.mistake6 .man .hands::before {
+	display: block;
+}
+.row .game-draw .draw .man .legs::before {
+	transform: rotate(45deg);
+	left: 62%;
+}
+.row .game-draw .draw .man .legs::after {
+	transform: rotate(-45deg);
+	left: 70%;
+}
+.row .game-draw .draw .man .legs::after,
+.row .game-draw .draw .man .legs::before {
+	width: 4px;
+	height: 40px;
+	position: absolute;
+	background-color: black;
+	top: 64%;
+	content: "";
+	display: none;
+}
+.row .game-draw .draw.mistake7 .man .legs::after,
+.row .game-draw .draw.mistake7 .man .legs::before {
+	display: block;
+}
+.row .letters {
+	flex: 2;
+	text-align: center;
+	margin: auto 0px;
+}
+.row .letters {
+}
+.row .letters span {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-color: rgb(62, 216, 15);
+	margin: 4px;
+	color: white;
+	line-height: 50px;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.row .letters span.clicked {
+	background-color: rgba(33, 90, 16, 0.979);
+	pointer-events: none;
+	opacity: 0.3;
+}
+.letters-guess {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.letters-guess .test-span {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	border-bottom: 2px solid black;
+	margin-right: 30px;
+	text-align: center;
+	line-height: 50px;
+}
+.letters-guess .test-span.space {
+	border: none;
+	height: 4px;
+	background-color: black;
+	width: 30px;
+}
+.pop-up {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: 50vh;
+	background-color: rgb(12, 184, 55);
+	font-size: 50px;
+	color: white;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+}
+.pop-up span {
+	padding: 40px;
+}
+.pop-up-reload {
+	padding: 10px 20px;
+	border-radius: 20px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+.letters-guess {
+	text-transform: uppercase;
+}
